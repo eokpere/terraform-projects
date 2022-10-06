@@ -32,6 +32,6 @@ module "nat_gateway" {
 
 #create sg
 module "security_group" {
-  source = "../lab1/modules/security-group"
+  source = "../modules/security-group"
   vpc_id = module.vpc.vpc_id
 }

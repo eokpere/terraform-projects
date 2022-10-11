@@ -16,7 +16,7 @@ resource "aws_security_group" "alb_security_group" {
     description      = "https access"
     from_port        = 443
     to_port          = 443
-    protocol         = tcp
+    protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
@@ -42,7 +42,7 @@ resource "aws_security_group" "ecs_security_group" {
     description      = "http access"
     from_port        = 80
     to_port          = 80
-    protocol         = tcp
+    protocol         = "tcp"
     security_groups  = [aws_security_group.alb_security_group.id]
   }
 

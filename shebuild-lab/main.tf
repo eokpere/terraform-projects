@@ -40,3 +40,9 @@ module "ecs_task_execution_role" {
   source ="../modules/ecs-tasks-execution-role"
   project_name = module.vpc.project_name #because we created the project name in the vpc module
 }
+
+module "Aws-Cert-Mgr" {
+  source = "../modules/Aws-Cert-Mgr"
+  domain_name = var.domain_name
+  alternative_name = var.alternative_name
+}

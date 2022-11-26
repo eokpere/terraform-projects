@@ -10,3 +10,4 @@ variable "private_data_subnet_az2_cidr" {}
 variable "domain_name" {} #new variables frm acm
 variable "alternative_name" {} #new variables frm acm
 variable "container_image" {}
+variable "record_name" {}

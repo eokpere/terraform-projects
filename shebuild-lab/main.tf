@@ -74,3 +74,15 @@ module "auto_scaling_group" {
   ecs_cluster_name    = module.ecs.ecs_cluster_name
   ecs_service_name    = module.ecs.ecs_service_name
 }
+
+module "route_53" {
+  source        = "../modules/route53"
+  domain_name   = module.Aws-Cert-Mgr.domain_name
+  record_name   = var.record_name
+  alb_dns_name  = module.application_load_balancer.alb_dns_name
+  alb_zone_id   = module.application_load_balancer.alb_zone_id
+}
+
+output "website_url" {
+  value = join ("",["https://", var.record_name, ".", var.domain_name])
+}

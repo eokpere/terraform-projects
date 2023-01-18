@@ -18,7 +18,7 @@ provider "aws" {
 #backend
  backend "s3" {
     bucket = "eva-buc-terraform"
-    key = "shebuild/terraform.tfstate"
+    key = "vpc-project/terraform.tfstate"
     dynamodb_table = "terraform-lock"
     region = "ca-central-1"
  }
